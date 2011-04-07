@@ -25,7 +25,7 @@ namespace FastSearcher {
 		}
 
 		private static string NoteFilename(string basedir, string title) {
-			return title;
+			return basedir + "/" + title;
 		}
 		
 		private Note(string title, string filename, string content) {
