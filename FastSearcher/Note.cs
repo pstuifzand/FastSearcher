@@ -54,7 +54,7 @@ namespace FastSearcher {
 			get {
 				return (
 					(DateTime.Today == Created.Date) 
-				        ? Created.ToString("HH:mm")
+				        ? "Today " + Created.ToString("HH:mm")
 				        : Created.ToString("yyyy-MM-dd HH:mm")
 				        ); 
 			}
