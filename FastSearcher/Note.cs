@@ -12,31 +12,20 @@ namespace FastSearcher {
 
 		public static Note Load(string filename) {
 			using (TextReader r = new StreamReader(filename)) {
-				string title    = r.ReadLine();
 				string content  = r.ReadToEnd();
-				return new Note(title, filename, title + "\n" + content);
+				FileSystemInfo info = new FileInfo(filename);
+				string title = info.Name;
+				return new Note(title, filename, content);
 			}
 		}
 		
 		public static Note Create(string basedir, string title) {
 			string filename = Note.NoteFilename(basedir, title);
-			return new Note(title, filename, title + "\n");
+			return new Note(title, filename, "");
 		}
 
 		private static string NoteFilename(string basedir, string title) {
-			string filename = title.ToLower();
-        
-	        Regex spaces_re = new Regex("\\s+");
-	        filename = spaces_re.Replace(filename, "-");
-	        
-	        Regex normalize_re = new Regex("[^a-z0-9_\\-]");
-	        filename = normalize_re.Replace(filename, "");
-	        
-	        DateTime date = DateTime.Now;
-        
-        	string notefilename = System.IO.Path.Combine(basedir, filename + '-' + date.ToString("yyyy-MM-dd_HH-mm-ss") + ".txt");
-
-			return notefilename;
+			return title;
 		}
 		
 		private Note(string title, string filename, string content) {
@@ -62,7 +51,13 @@ namespace FastSearcher {
 			get { return File.GetCreationTime(Filename); }
 		}
 		public string CreatedNiceString {
-			get { return ((DateTime.Today == Created.Date) ? "Today" : Created.ToString("yyyy-MM-dd HH:mm")); }
+			get {
+				return (
+					(DateTime.Today == Created.Date) 
+				        ? Created.ToString("HH:mm")
+				        : Created.ToString("yyyy-MM-dd HH:mm")
+				        ); 
+			}
 		}
 
 		public void Save() {
@@ -74,7 +69,7 @@ namespace FastSearcher {
 
 		public bool Match(string query) {
 			Regex re = new Regex(query, RegexOptions.IgnoreCase);
-			return re.IsMatch(Title) || re.IsMatch(Content);
+			return re.IsMatch(Title) || re.IsMatch(Filename) || re.IsMatch(Content);
 		}
 	}
 }
