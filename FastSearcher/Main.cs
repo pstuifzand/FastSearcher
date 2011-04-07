@@ -10,7 +10,7 @@ namespace FastSearcher
 			Application.Init ();
 			MainWindow win = new MainWindow ();
 			win.Show ();
-			win.SetSizeRequest(600, 800);
+			win.SetSizeRequest(650, 800);
 			win.WindowPosition = WindowPosition.CenterAlways;
 			Application.Run ();
 		}
