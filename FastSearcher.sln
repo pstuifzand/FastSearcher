@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastSearcher", "FastSearcher\FastSearcher.csproj", "{1B93C2D5-7E4D-4D7B-A162-1FACF2C22030}"
+EndProject
+Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "Packages", "Packages.mdproj", "{1C93422A-0A5F-4B8C-8220-A31F9A60087E}"
+EndProject
+Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "Packages", "Packages.mdproj", "{6894145D-8D78-4726-B8D7-D29070E488C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B93C2D5-7E4D-4D7B-A162-1FACF2C22030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B93C2D5-7E4D-4D7B-A162-1FACF2C22030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B93C2D5-7E4D-4D7B-A162-1FACF2C22030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B93C2D5-7E4D-4D7B-A162-1FACF2C22030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C93422A-0A5F-4B8C-8220-A31F9A60087E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C93422A-0A5F-4B8C-8220-A31F9A60087E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6894145D-8D78-4726-B8D7-D29070E488C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6894145D-8D78-4726-B8D7-D29070E488C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = FastSearcher\FastSearcher.csproj
+	EndGlobalSection
+EndGlobal
